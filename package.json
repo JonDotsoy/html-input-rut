@@ -8,7 +8,8 @@
     "tag": "latest"
   },
   "scripts": {
-    "build:watch": "tsc --watch"
+    "build:watch": "tsc --watch",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +24,7 @@
   "homepage": "https://github.com/JonDotsoy/html-input-rut#readme",
   "description": "",
   "devDependencies": {
+    "standard-version": "^9.3.2",
     "typescript": "^4.5.4"
   }
 }
