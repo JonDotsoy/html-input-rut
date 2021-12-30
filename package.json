@@ -1,0 +1,24 @@
+{
+  "name": "html-input-rut",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build:watch": "tsc --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonDotsoy/html-input-rut.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JonDotsoy/html-input-rut/issues"
+  },
+  "homepage": "https://github.com/JonDotsoy/html-input-rut#readme",
+  "description": "",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}

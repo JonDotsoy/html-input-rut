@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+
+    <script type="module" src="./register.mjs"></script>
+    <script src="https://cdn.tailwindcss.com/"></script>
+
+    <style>
+        .--input-invalid {
+            display: none;
+        }
+
+        input:invalid+.--input-invalid {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex justify-center items-center h-screen bg-gray-900 w-full space-x-4">
+
+        <form action="https://httpbin.org/post" method="post" target="demo-url" class="flex flex-col space-y-4">
+            <span class="space-y-2">
+                <input required is="input-rut" autocomplete="off" type="text" name="rut" placeholder="RUT"
+                    class="bg-white py-2 px-4 rounded invalid:bg-red-600 invalid:text-white" />
+                <p class="--input-invalid text-white bg-red-500 px-4 py-2 rounded text-sm">
+                    Requiere un RUT valido
+                </p>
+            </span>
+            <input type="submit" value="Enviar"
+                class="py-2 px-4 rounded border border-blue-800 bg-blue-600 text-white shadow-white">
+        </form>
+
+
+        <form action="https://httpbin.org/post" method="post" target="demo-url" class="flex flex-col space-y-4">
+            <span class="space-y-2">
+                <input is="input-rut" required autocomplete="off" type="text" name="rut" placeholder="RUT"
+                    class="bg-white py-2 px-4 rounded invalid:bg-red-600 invalid:text-white" value="11.111.111-1" />
+                <p class="--input-invalid text-white bg-red-500 px-4 py-2 rounded text-sm">
+                    Requiere un RUT valido
+                </p>
+            </span>
+            <input type="submit" value="Enviar"
+                class="py-2 px-4 rounded border border-blue-800 bg-blue-600 text-white shadow-white">
+        </form>
+
+        <form action="https://httpbin.org/post" method="post" target="demo-url" class="flex flex-col space-y-4">
+            <span class="space-y-2">
+                <input is="input-rut" required autocomplete="off" type="text" name="rut" placeholder="RUT"
+                    class="bg-white py-2 px-4 rounded invalid:bg-red-600 invalid:text-white" value="11.111.111-2" />
+                <p class="--input-invalid text-white bg-red-500 px-4 py-2 rounded text-sm">
+                    Requiere un RUT valido
+                </p>
+            </span>
+            <input type="submit" value="Enviar"
+                class="py-2 px-4 rounded border border-blue-800 bg-blue-600 text-white shadow-white">
+        </form>
+
+    </div>
+</body>
+
+</html>
