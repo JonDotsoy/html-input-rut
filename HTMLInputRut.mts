@@ -24,7 +24,6 @@ export class HTMLInputRut extends HTMLInputElement {
 
   validateRutValue() {
     if (this.value.length > 0) {
-      const value = this.value;
       const { message, valueClean } = ChileanRut.validateRutMessage(this.value);
       this.inputValue.value = valueClean;
       this.setCustomValidity(message);
