@@ -1,0 +1,7 @@
+tsconfig.json
+*.mts
+*.tgz
+*.html
+.editorconfig
+CHANGELOG.md
+!*.d.mts

@@ -1,3 +1,5 @@
 *.mjs
 !.editorconfig
 *.tgz
+*.d.mts
+!.npmignore

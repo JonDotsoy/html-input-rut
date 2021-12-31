@@ -1,13 +1,16 @@
 {
   "name": "html-input-rut",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./server.mjs",
+  "browser": "./browser.mjs",
   "type": "module",
   "publishConfig": {
     "access": "public",
     "tag": "latest"
   },
   "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
     "build:watch": "tsc --watch",
     "release": "standard-version"
   },
