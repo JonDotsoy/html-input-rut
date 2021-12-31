@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/JonDotsoy/html-input-rut/compare/v1.1.0...v1.2.0) (2021-12-31)
+
+
+### Features
+
+* **html-input-rut:** add property with rut on parts ([1fa9817](https://github.com/JonDotsoy/html-input-rut/commit/1fa9817f9a86e43e624c0740654cef35805cb865))
+
 ## [1.1.0](https://github.com/JonDotsoy/html-input-rut/compare/v1.0.0...v1.1.0) (2021-12-31)
 
 
