@@ -1,4 +1,6 @@
-function isNumberString(value: any): value is `${number}` {
+type RutBody = `${number}`;
+
+function isNumberString(value: any): value is RutBody {
   return typeof value === 'string' && /^\d+$/.test(value);
 }
 
@@ -26,7 +28,7 @@ export class ChileanRut {
     return ChileanRut.dv(rut) == digv;
   }
 
-  static dv(rutBodyNumber: `${number}`) {
+  static dv(rutBodyNumber: RutBody) {
     let T = Number(rutBodyNumber);
     let M = 0;
     let S = 1;
