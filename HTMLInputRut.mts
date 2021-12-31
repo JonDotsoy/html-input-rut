@@ -2,30 +2,22 @@
 import { ChileanRut } from './ChileanRut.mjs';
 
 export class HTMLInputRut extends HTMLInputElement {
-  inputValue = document.createElement('input')
+  currentValue = '';
 
   constructor() {
     super();
-    const inputValue = this.inputValue;
-    inputValue.type = 'hidden'
-    inputValue.name = this.name
-    inputValue.value = this.value
-    this.name = `::input::${this.name}`
-
-    if (this.form) {
-      this.form.appendChild(inputValue)
-    }
-
     this.validateRutValue();
 
-    this.addEventListener("change", () => this.validateRutValue());
+    this.addEventListener("change", () => this.validateRutValue(true));
     this.addEventListener("keyup", () => this.validateRutValue());
   }
 
-  validateRutValue() {
+  validateRutValue(formatValue = false) {
     if (this.value.length > 0) {
-      const { message, valueClean } = ChileanRut.validateRutMessage(this.value);
-      this.inputValue.value = valueClean;
+      const { message, rutFormatted } = ChileanRut.validateRutMessage(this.value);
+      if (formatValue && rutFormatted) {
+        this.value = rutFormatted;
+      }
       this.setCustomValidity(message);
       this.reportValidity();
     } else {
