@@ -22,7 +22,17 @@ export class ChileanRut {
 
     const rutFormatted = `${numberFormat.format(v.rut)}-${v.dv}`;
 
-    return { valid: true, value, valueClean, rutFormatted, message: "" };
+    return {
+      valid: true,
+      parts: {
+        rut: v.rut,
+        dv: v.dv,
+      },
+      value,
+      valueClean,
+      rutFormatted,
+      message: "",
+    };
   }
 
   static validateRut(rutClean: string) {

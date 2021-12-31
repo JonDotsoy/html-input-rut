@@ -2,7 +2,7 @@
 import { ChileanRut } from './ChileanRut.mjs';
 
 export class HTMLInputRut extends HTMLInputElement {
-  currentValue = '';
+  valueRut?: { rut: number | undefined; dv: string | undefined; formatted: string | undefined; clean: string; valid: boolean; };
 
   constructor() {
     super();
@@ -14,11 +14,20 @@ export class HTMLInputRut extends HTMLInputElement {
 
   validateRutValue(formatValue = false) {
     if (this.value.length > 0) {
-      const { message, rutFormatted } = ChileanRut.validateRutMessage(this.value);
-      if (formatValue && rutFormatted) {
-        this.value = rutFormatted;
+      const check = ChileanRut.validateRutMessage(this.value);
+      if (formatValue && check.rutFormatted) {
+        this.value = check.rutFormatted;
       }
-      this.setCustomValidity(message);
+      this.valueRut = check.valid
+        ? {
+          rut: check.parts?.rut,
+          dv: check.parts?.dv,
+          formatted: check.rutFormatted,
+          clean: check.valueClean,
+          valid: check.valid,
+        }
+        : undefined;
+      this.setCustomValidity(check.message);
       this.reportValidity();
     } else {
       this.setCustomValidity("");
