@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
   <meta charset="UTF-8">
@@ -11,18 +11,22 @@
   <script src="https://cdn.tailwindcss.com/"></script>
 
   <style>
-    .--input-invalid {
+    input:valid+.--input-invalid {
       display: none;
     }
 
     input:invalid+.--input-invalid {
       display: block;
     }
+
+    #box-inputs>* {
+      padding: 10px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="flex justify-center items-center h-screen bg-gray-900 w-full space-x-4">
+  <div id="box-inputs" class="flex flex-wrap justify-center items-center min-h-screen bg-gray-900 w-full">
 
     <form action="https://httpbin.org/post" method="post" target="demo-url" class="flex flex-col space-y-4">
       <span class="space-y-2">

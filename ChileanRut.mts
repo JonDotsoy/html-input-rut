@@ -1,3 +1,5 @@
+import { RutValidity } from "./RutValidity.mjs";
+
 type RutBody = `${number}`;
 
 export class ChileanRutMessages {
@@ -74,27 +76,29 @@ function isNumberString(value: any): value is RutBody {
 }
 
 const numberFormat = new Intl.NumberFormat('es-CL', { style: 'decimal', useGrouping: true });
-
-const chileanRutMessages = new ChileanRutMessages();
-
 export class ChileanRut {
+  chileanRutMessages = new ChileanRutMessages();
 
-  static validateRutMessage(value: string) {
+  validateRutMessage(value: string) {
+    const validity = new RutValidity();
     const valueClean = value.replace(/[^0-9kK]/g, "");
 
     if (!/^\s*\d[\.\d]*-?[\dkK]\s*$/.test(value)) {
-      return { valid: false, value, valueClean, message: chileanRutMessages.translate("The format of the chilean RUT is incorrect") };
+      validity.formatInvalid = true;
+      return { validity, valid: false, value, valueClean, message: this.chileanRutMessages.translate("The format of the chilean RUT is incorrect") };
     }
 
     const v = ChileanRut.validateRut(valueClean);
 
     if (!v.valid) {
-      return { valid: false, value, valueClean, message: chileanRutMessages.translate("The chilean RUT entered is incorrect") };
+      validity.dvInvalid = true;
+      return { validity, valid: false, value, valueClean, message: this.chileanRutMessages.translate("The chilean RUT entered is incorrect") };
     }
 
     const rutFormatted = `${numberFormat.format(v.rut)}-${v.dv}`;
 
     return {
+      validity,
       valid: true,
       parts: {
         rut: v.rut,
