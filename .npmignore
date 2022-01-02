@@ -5,3 +5,4 @@ tsconfig.json
 .editorconfig
 CHANGELOG.md
 !*.d.mts
+assets
