@@ -1,6 +1,6 @@
 {
   "name": "html-input-rut",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "./server.mjs",
   "browser": "./browser.mjs",
   "type": "module",
