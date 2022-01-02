@@ -15,9 +15,14 @@
     "clean": "tsc --build --clean",
     "release": "standard-version"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "rut",
+    "web-component",
+    "chilean rut",
+    "html-input"
+  ],
+  "author": "Jonathan Delgado Zamorano <hi@jon.soy> (https://jon.soy)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JonDotsoy/html-input-rut.git"
@@ -26,10 +31,11 @@
     "url": "https://github.com/JonDotsoy/html-input-rut/issues"
   },
   "homepage": "https://github.com/JonDotsoy/html-input-rut#readme",
-  "description": "",
+  "description": "This module is a simple web component to create a input chilean RUT validation. Compatible with pure HTML and any framework (React, Vie, Angular, Other).",
   "devDependencies": {
     "@types/node": "^17.0.6",
     "standard-version": "^9.3.2",
     "typescript": "^4.5.4"
-  }
+  },
+  "dependencies": {}
 }
