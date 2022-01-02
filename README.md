@@ -2,7 +2,7 @@
 
 This module is a simple web component to create a input chilean RUT validation. Compatible with pure HTML and any framework (React, Vie, Angular, Other).
 
-![dmeo](./assets/demo-1.gif)
+[![dmeo](./assets/demo-1.gif)](https://codesandbox.io/s/cool-worker-lvlxg?file=/index.html)
 
 ## Installing
 
