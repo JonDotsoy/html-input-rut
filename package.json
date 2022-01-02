@@ -12,6 +12,7 @@
     "build": "tsc",
     "prepare": "tsc",
     "build:watch": "tsc --watch",
+    "clean": "tsc --build --clean",
     "release": "standard-version"
   },
   "keywords": [],
@@ -27,6 +28,7 @@
   "homepage": "https://github.com/JonDotsoy/html-input-rut#readme",
   "description": "",
   "devDependencies": {
+    "@types/node": "^17.0.6",
     "standard-version": "^9.3.2",
     "typescript": "^4.5.4"
   }
